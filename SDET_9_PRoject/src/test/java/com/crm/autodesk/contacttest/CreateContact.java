@@ -51,12 +51,12 @@ public class CreateContact {
 		String BROWSER = flib.getPropertyKeyValue("browser");
 
 		/* test Data */
-		String orgName = eLib.getExcelData("contact", "tc_01", "OrgName")+ randomNum;
-		String orgType = eLib.getExcelData("contact", "tc_01", "orgType");
-		String orgIndustry = eLib.getExcelData("contact", "tc_01", "Industry");
-		String orgRating = eLib.getExcelData("contact", "tc_01", "rating");
+		String orgName = eLib.getExcelData("Contact", "tc_01", "OrgName")+ randomNum;
+		String orgType = eLib.getExcelData("Contact", "tc_01", "orgType");
+		String orgIndustry = eLib.getExcelData("Contact", "tc_01", "Industry");
+		String orgRating = eLib.getExcelData("Contact", "tc_01", "rating");
 
-		String contLastNAme = eLib.getExcelData("contact", "tc_01", "contactName") + randomNum;
+		String contLastNAme = eLib.getExcelData("Contact", "tc_01", "contactName") + randomNum;
 
 		/* step 1 : login to APP */
 		WebDriver driver = null;
@@ -79,11 +79,11 @@ public class CreateContact {
 		   Home hp = new Home(driver);
 		        hp.getOrgLnk().click();
 
-		/* step 3 : navigate ot create Org Page */
+		/* step 3 : navigate to create Org Page */
 		   Organizations orgPage = new Organizations(driver);
 		        orgPage.getCreateOrgImg().click();
 
-		/* step 4 : create new Organization with inductry & type, rating */
+		/* step 4 : create new Organization with industry & type, rating */
 		    CreateNewOrganization createOrgPage = new CreateNewOrganization(driver);
 		    createOrgPage.creatOrganization(orgName, orgIndustry, orgType, orgRating);
 		    
@@ -99,7 +99,7 @@ public class CreateContact {
 		    Contacts cp = new Contacts(driver);
 		    cp.getCreateOrgImg().click();
 
-		/* step 7 : creat new Contact with Org */
+		/* step 7 : create new Contact with Org */
             CreateNewConatct cnc = new CreateNewConatct(driver);
             cnc.createConatct(contLastNAme, orgName);
 

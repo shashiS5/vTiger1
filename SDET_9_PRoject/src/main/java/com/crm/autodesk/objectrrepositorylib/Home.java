@@ -38,6 +38,15 @@ public class Home  extends WebDriverUtiles{
 	
 	@FindBy(linkText = "Products")
     private WebElement productlnk;
+	
+	@FindBy(linkText="More")
+	private WebElement moreLnk;
+	
+	@FindBy(linkText="Quotes")
+	private WebElement QuotesLnk;
+	
+	@FindBy(linkText="Opportunities")
+	private WebElement OpportunitiesLnk;
 
 	public WebElement getContactLnk() {
 		return contactLnk;
@@ -56,7 +65,16 @@ public class Home  extends WebDriverUtiles{
 		signOutLnk.click();
 	}
 	
+	public WebElement moreLnk() {
+		return moreLnk;
+	}
+	public WebElement quotesLnk() {
+		return QuotesLnk;
+	}
 	
-	
+	public WebElement pportunitiesLnk()
+	{
+		return OpportunitiesLnk;
+	}
 	
 	}

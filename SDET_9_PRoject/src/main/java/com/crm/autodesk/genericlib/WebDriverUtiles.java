@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author Deepak
  *
  */
+
 public class WebDriverUtiles {
    /**
     *  used to select the option from the dropdwon based on visible text
@@ -27,6 +29,10 @@ public class WebDriverUtiles {
 		Select sel = new Select(element);
 		sel.selectByVisibleText(visibleText);
 		
+	}
+	public void windowMax(WebDriver driver)
+	{
+		driver.manage().window().maximize();
 	}
 	/**
 	 * used to select the option from the dropdwon based on position / index (index always start from 0)
@@ -103,6 +109,18 @@ public class WebDriverUtiles {
 		
 		driver.switchTo().alert().accept();
 	}
+	/*
+	 * 
+	 * to get text of alert accept
+	 */
+	public void alertGetText(WebDriver driver) {
+		
+		Alert a=driver.switchTo().alert();
+		String s=a.getText();
+		System.out.println(s);
+		a.accept();
+	}
+	
 	
 	/**
 	 * used to Switch to Alert Popup & click on cancel button
@@ -138,9 +156,27 @@ public class WebDriverUtiles {
 	     }else {
 	    	 driver.switchTo().frame(name);
 	     }
+   }
+	     /**
+	      * used to wait for expected element in GUI based on Xpath
+	      * @param element
+	      * @throws Throwable
+	      */
+	     public void waitAndClick(WebDriver driver , String xpath) throws Throwable {
+	        int count = 0;
+	             while(count < 40) {
+	          try {
+	           driver.findElement(By.xpath(xpath)).click();
+	            break;
+	          }catch (Throwable e) {
+	         Thread.sleep(500);
+	         count++;
+	          }
+	             }
+	     }
 	   
 	}
    
 	
 
-}
+

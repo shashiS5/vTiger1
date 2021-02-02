@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" >
+  <test thread-count="1" name="Test">
+    <classes>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestCase"/>
+       </classes>
+  </test>
+  
+   <test thread-count="1" name="Test">
+    <classes>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestClass12"/>
+       </classes>
+  </test>
+  
+  <test thread-count="1" name="Test">
+    <classes>
+     <class name="com.crm.autodesk.AssignmentTestCase.TestCase13"/>
+       </classes>
+  </test>
+  
+  <test thread-count="1" name="Test">
+    <classes>
+     <class name="com.crm.autodesk.AssignmentTestCase.TestCase14"/>
+       </classes>
+  </test>
+  
+  <test thread-count="1" name="Test">
+    <classes>
+     <class name="com.crm.autodesk.AssignmentTestCase.TestCase15"/>
+       </classes>
+  </test>
+  
+  <test thread-count="1" name="Test">
+    <classes>
+     <class name="com.crm.autodesk.AssignmentTestCase.TestCase16"/>
+       </classes>
+   </test>
+       
+       
+  <test thread-count="1" name="Test">
+    <classes>
+     <class name="com.crm.autodesk.AssignmentTestCase.TestCase17"/>
+       </classes> 
+  </test>
+   <!-- Test -->
+ </suite> <!-- Suite -->

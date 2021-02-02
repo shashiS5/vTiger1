@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="1" name="chromeTest">
+   <parameter name ="browser" value = "chrome"/>
+    <classes>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestCase17"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestClass16"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestClass15"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestClass"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestCase12"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestCase13"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestCase14"/>
+    </classes>
+  </test>
+<test thread-count="1" name="firefoxTest">
+   <parameter name ="browser" value = "firefox"/>
+    <classes>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestCase17"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestClass16"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestClass15"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestClass"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestCase12"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestCase13"/>
+      <class name="com.crm.autodesk.AssignmentTestCase.TestCase14"/>
+    </classes>
+  </test> 
+
+<!-- Test -->
+</suite> <!-- Suite -->

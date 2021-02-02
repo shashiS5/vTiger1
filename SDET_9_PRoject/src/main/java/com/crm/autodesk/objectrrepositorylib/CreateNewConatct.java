@@ -44,14 +44,14 @@ public class CreateNewConatct extends WebDriverUtiles{
 		swicthToWindow(driver, "Accounts&action");
 		Organizations orgPage = new Organizations(driver);
 		select(orgPage.getInDropDown(),serachDropOtp);
-		orgPage.getSearchEdt().sendKeys(orgName);
+		orgPage.getSearchEdt().sendKeys(lastName);
 		orgPage.getSearchNow().click();
-		driver.findElement(By.xpath("//a[text()='"+orgName+"']")).click();
-		//swict to Parent
+		driver.findElement(By.xpath("//a[text()='"+lastName+"']")).click();
+		//switch to Parent
 		swicthToWindow(driver, "Contacts");
 		saveBtn.click();
 	}
-	
+	//
 	public  void createConatct(String lastName , String orgName ) {
 		lastNameEdt.sendKeys(lastName);
 		organizationLookUpImage.click();
@@ -71,4 +71,20 @@ public class CreateNewConatct extends WebDriverUtiles{
 		lastNameEdt.sendKeys(lastName);
 		saveBtn.click();
 	}
+	public  void createConatct(String orgName ) 
+	{
+		organizationLookUpImage.click();
+		//swicth to Child
+		swicthToWindow(driver, "Accounts&action");
+		Organizations orgPage = new Organizations(driver);
+
+		orgPage.getSearchEdt().sendKeys(orgName);
+		orgPage.getSearchNow().click();
+		driver.findElement(By.xpath("//a[text()='"+orgName+"']")).click();
+		//swict to Parent
+		swicthToWindow(driver, "Contacts");
+		saveBtn.click();
+	}
+	
+	
 }

@@ -14,7 +14,27 @@ import com.mysql.cj.jdbc.Driver;
  */
 public class DatabaseUtils {
 	
+	 Connection con = null;
+	 ResultSet result = null;
+
 	
+	public void connectToDB() {
+		Driver driverRef;
+		try {
+			driverRef = new Driver();
+			DriverManager.registerDriver(driverRef);
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shashi", "root", "root");
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+	
+	}
+	
+	
+	public void closeDb() throws SQLException {
+		con.close();
+	}
 	/**
 	 * used to execute select database query & retrun table in the form of ResultSet 
 	 * @param query
@@ -29,7 +49,7 @@ public class DatabaseUtils {
 		      Driver mysqlDriverR = new Driver();
 		      DriverManager.registerDriver(mysqlDriverR);
 			//step 2 : connect to database 
-		        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projects","root","root");  
+		        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shashi","root","root");  
 			//step 3 : create a statement ref
 		       Statement stat = con.createStatement();		       		       
 			//step 4: execute Query
@@ -57,7 +77,7 @@ public class DatabaseUtils {
 			try {
 			      Driver mysqlDriverR = new Driver();
 			      DriverManager.registerDriver(mysqlDriverR);
-			        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projects","root","root");
+			        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shashi","root","root");
 			       Statement stat = con.createStatement();
 			       result=  stat.executeUpdate(query);
 			           if(result==1) {
